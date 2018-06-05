@@ -1,0 +1,6 @@
+  build_docs:
+    stage: build
+    script:
+    - /opt/trigger/pipeline_runner.sh pipeline_ms_pagoservicios
+    only:
+    - Desarrollo-CI   
