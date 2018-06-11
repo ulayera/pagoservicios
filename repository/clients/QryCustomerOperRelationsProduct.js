@@ -33,12 +33,12 @@ module.exports.QryCustomerOperRelationsProduct = {
             await strongSoapB9(url, currHeader, req, funcionWSDL)
                 .then((resp) => {
                     respuesta = exito('Exito en la prueba', resp.result).obtieneMensaje();
-                    try {monitoreoBECH(req, respuesta);} catch(e) {console.error(e)}
+                    try {monitoreoBECH(req, respuesta);} catch(e) {}
                     resolve(respuesta);
                 })
                 .catch((error) => {
                     respuesta = malRequest('Fallo en la prueba', error.root.Envelope.Body.Fault).obtieneMensaje();
-                    try {monitoreoBECH(req, respuesta);} catch(e) {console.error(e)}
+                    try {monitoreoBECH(req, respuesta);} catch(e) {}
                     reject(respuesta);
                 })
         });

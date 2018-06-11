@@ -1,41 +1,8 @@
 const { send } = require('micro');
 const { validaGetPersonaNatural } = require('./getCuentasInscritas.scheme');
+const {exito, malRequest} = require('arquitecturadigital-bech').mensajeSalida;
+const {monitoreoBECH} = require('arquitecturadigital-bech');
 const { QryCustomerOperRelationsProduct } = require('../clients/QryCustomerOperRelationsProduct');
-
-/**
- * Variables locales dinamicas
- */
-let respuesta;
-
-/**
- * Variables locales estaticas
- */
-const url = 'http://167.28.65.55:6106/services/QryCustomerOperRelationsProduct/v1.0?wsdl';
-const funcionWSDL = ['QryCustomerOperRelationsProduct', 'QryCustomerOperRelationsProduct', 'massiveSelectEftAccessionByCustomer'];
-const header = {
-    ServiceId: 'singleSelectCustomerDataForLogin',
-    Type: 'Request',
-    ServiceVersion: '1.0',
-    InstitutionType: 'UNDEFINED',
-    Locale: 'es_CL',
-    ChannelDispatchDate: '',
-    CustomProperties: '',
-    TraceNumber: '',
-    SourceDate: '',
-    InstitutionId: '',
-    OrganizationId: '',
-    BranchId: '',
-    ChannelId: 'HB',
-    UserId: '',
-    FeatureId: 'req.headers.funcionalidad',
-    ErrorCode: '',
-    Client: {
-        UserAgent: '',
-        Address: 'req.connection.remoteAddress',
-        SessionId: 'datosToken.idSesion',
-        UserId: 'identificationNumber',
-    },
-};
 
 /**
  * TODO: docs
@@ -44,12 +11,11 @@ const header = {
  * @returns {Promise<void>}
  */
 module.exports.getCuentasInscritas = async (req, res) => {
-
+    let respuesta;
     try {
         await validaGetPersonaNatural(req);
         const { rut } = req.params;
         const rutSplitted = obtieneRut(rut);
-
         const request = {
             customerIdentification: {
                 identificationNumber: rutSplitted[0],
@@ -61,10 +27,12 @@ module.exports.getCuentasInscritas = async (req, res) => {
             },
         };
         respuesta = await QryCustomerOperRelationsProduct.massiveSelectEftAccessionByCustomer(request);
+        console.log("ulayera ok");
         send(res, respuesta.codigo, respuesta);
     } catch (error) {
         respuesta = malRequest('Fallo en la prueba', error).obtieneMensaje();
-        try {monitoreoBECH(req, respuesta);} catch(e) {console.error(e)}
+        try {monitoreoBECH(req, respuesta);} catch(e) {}
+        console.log("ulayera ok");
         send(res, respuesta.codigo, respuesta)
     }
 };

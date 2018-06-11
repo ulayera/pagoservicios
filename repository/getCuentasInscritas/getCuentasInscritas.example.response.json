@@ -1,180 +1,186 @@
 {
-  "eftAccessions": [
-    {
-      "targetAccountName": "TOTAL",
-      "paymentConcept": "undefined",
-      "identification": "0109626708",
-      "stampAdditional": "jmarrufo@externos.bancoestado.cl",
-      "originCustomerName": "CLIENTE DE PRUEBA",
-      "subproductTarget": {
-        "shortDesc": "****************************************"
-      },
-      "originCustomer": "**********"
-    },
-    {
-      "targetAccountName": "PRUEBA524082015",
-      "paymentConcept": "0014103526",
-      "identification": "123456789",
-      "stampAdditional": "promerof@sentra.cl",
-      "originCustomerName": "MOVISTAR",
-      "subproductTarget": {
-        "shortDesc": "****************************************"
-      }
-    },
-    {
-      "targetAccountName": "PRUEBA724082015",
-      "paymentConcept": "0014103526",
-      "identification": "22222222",
-      "stampAdditional": "promerof@sentra.cl",
-      "originCustomerName": "MOVISTAR",
-      "subproductTarget": {
-        "shortDesc": "****************************************"
-      }
-    },
-    {
-      "targetAccountName": "PRUEBA424082015",
-      "paymentConcept": "0014103526",
-      "identification": "25281272",
-      "stampAdditional": "promerof@sentra.cl",
-      "originCustomerName": "MOVISTAR",
-      "subproductTarget": {
-        "shortDesc": "****************************************"
-      }
-    },
-    {
-      "targetAccountName": "PRUEBA924082015",
-      "paymentConcept": "0014103526",
-      "identification": "44444444",
-      "stampAdditional": "promerof@sentra.cl",
-      "originCustomerName": "MOVISTAR",
-      "subproductTarget": {
-        "shortDesc": "****************************************"
-      }
-    },
-    {
-      "targetAccountName": "PRUEBA1024082015",
-      "paymentConcept": "0014103526",
-      "identification": "55555555",
-      "stampAdditional": "promerof@sentra.cl",
-      "originCustomerName": "MOVISTAR",
-      "subproductTarget": {
-        "shortDesc": "****************************************"
-      }
-    },
-    {
-      "targetAccountName": "PRUEBA24082015",
-      "paymentConcept": "0014103526",
-      "identification": "85334507",
-      "stampAdditional": "promerof@sentra.cl",
-      "originCustomerName": "MOVISTAR",
-      "subproductTarget": {
-        "shortDesc": "****************************************"
-      }
-    },
-    {
-      "targetAccountName": "PRUEBA28082015",
-      "paymentConcept": "0014103526",
-      "identification": "90267906",
-      "stampAdditional": "promerof@sentra.cl",
-      "originCustomerName": "MOVISTAR",
-      "subproductTarget": {
-        "shortDesc": "****************************************"
-      }
-    },
-    {
-      "targetAccountName": "PRUEBA324082015",
-      "paymentConcept": "0014103526",
-      "identification": "92242526",
-      "stampAdditional": "promerof@sentra.cl",
-      "originCustomerName": "MOVISTAR",
-      "subproductTarget": {
-        "shortDesc": "****************************************"
-      }
-    },
-    {
-      "targetAccountName": "prueba_30092016",
-      "paymentConcept": "2354106996",
-      "identification": "009658962k",
-      "stampAdditional": "ftobar@bancoestado.cl",
-      "originCustomerName": "PARQUE RENACA",
-      "subproductTarget": {
-        "shortDesc": "CEMENTERIOS"
-      },
-      "originCustomer": "0000000104"
-    },
-    {
-      "targetAccountName": "ppp",
-      "paymentConcept": "2354106996",
-      "identification": "0109626708",
-      "stampAdditional": "jaraya7@externos.bancoestado.cl",
-      "originCustomerName": "PARQUE RENACA",
-      "subproductTarget": {
-        "shortDesc": "CEMENTERIOS"
-      },
-      "originCustomer": "0000000104"
-    },
-    {
-      "targetAccountName": "prueba05102016",
-      "paymentConcept": "2354106996",
-      "identification": "013297666K",
-      "originCustomerName": "PARQUE RENACA",
-      "subproductTarget": {
-        "shortDesc": "CEMENTERIOS"
-      },
-      "originCustomer": "0000000104"
-    },
-    {
-      "targetAccountName": "errornea",
-      "paymentConcept": "2354106996",
-      "identification": "12345677",
-      "stampAdditional": "mcuellar@bancoestado.cl",
-      "originCustomerName": "PARQUE RENACA",
-      "subproductTarget": {
-        "shortDesc": "CEMENTERIOS"
-      },
-      "originCustomer": "0000000104"
-    },
-    {
-      "targetAccountName": "cuenta05102016",
-      "paymentConcept": "2354106996",
-      "identification": "56723447",
-      "stampAdditional": "ftobar@bancoestado.cl",
-      "originCustomerName": "PARQUE RENACA",
-      "subproductTarget": {
-        "shortDesc": "CEMENTERIOS"
-      },
-      "originCustomer": "0000000104"
-    },
-    {
-      "targetAccountName": "prueba05102016",
-      "paymentConcept": "2354106996",
-      "identification": "65379597",
-      "originCustomerName": "PARQUE RENACA",
-      "subproductTarget": {
-        "shortDesc": "CEMENTERIOS"
-      },
-      "originCustomer": "0000000104"
-    },
-    {
-      "targetAccountName": "prueba05102016",
-      "paymentConcept": "2354106996",
-      "identification": "78362863",
-      "originCustomerName": "PARQUE RENACA",
-      "subproductTarget": {
-        "shortDesc": "CEMENTERIOS"
-      },
-      "originCustomer": "0000000104"
-    },
-    {
-      "targetAccountName": "prueba_30092016",
-      "paymentConcept": "2354106996",
-      "identification": "79283401",
-      "stampAdditional": "ftobar@bancoestado.cl",
-      "originCustomerName": "PARQUE RENACA",
-      "subproductTarget": {
-        "shortDesc": "CEMENTERIOS"
-      },
-      "originCustomer": "0000000104"
+  "codigo": 200,
+  "mensaje": "Exito en la prueba",
+  "payload": {
+    "eftsAccessions": {
+      "eftAccessions": [
+        {
+          "targetAccountName": "TOTAL",
+          "paymentConcept": "undefined",
+          "identification": "0109626708",
+          "stampAdditional": "jmarrufo@externos.bancoestado.cl",
+          "originCustomerName": "CLIENTE DE PRUEBA",
+          "subproductTarget": {
+            "shortDesc": "****************************************"
+          },
+          "originCustomer": "**********"
+        },
+        {
+          "targetAccountName": "PRUEBA524082015",
+          "paymentConcept": "0014103526",
+          "identification": "123456789",
+          "stampAdditional": "promerof@sentra.cl",
+          "originCustomerName": "MOVISTAR",
+          "subproductTarget": {
+            "shortDesc": "****************************************"
+          }
+        },
+        {
+          "targetAccountName": "PRUEBA724082015",
+          "paymentConcept": "0014103526",
+          "identification": "22222222",
+          "stampAdditional": "promerof@sentra.cl",
+          "originCustomerName": "MOVISTAR",
+          "subproductTarget": {
+            "shortDesc": "****************************************"
+          }
+        },
+        {
+          "targetAccountName": "PRUEBA424082015",
+          "paymentConcept": "0014103526",
+          "identification": "25281272",
+          "stampAdditional": "promerof@sentra.cl",
+          "originCustomerName": "MOVISTAR",
+          "subproductTarget": {
+            "shortDesc": "****************************************"
+          }
+        },
+        {
+          "targetAccountName": "PRUEBA924082015",
+          "paymentConcept": "0014103526",
+          "identification": "44444444",
+          "stampAdditional": "promerof@sentra.cl",
+          "originCustomerName": "MOVISTAR",
+          "subproductTarget": {
+            "shortDesc": "****************************************"
+          }
+        },
+        {
+          "targetAccountName": "PRUEBA1024082015",
+          "paymentConcept": "0014103526",
+          "identification": "55555555",
+          "stampAdditional": "promerof@sentra.cl",
+          "originCustomerName": "MOVISTAR",
+          "subproductTarget": {
+            "shortDesc": "****************************************"
+          }
+        },
+        {
+          "targetAccountName": "PRUEBA24082015",
+          "paymentConcept": "0014103526",
+          "identification": "85334507",
+          "stampAdditional": "promerof@sentra.cl",
+          "originCustomerName": "MOVISTAR",
+          "subproductTarget": {
+            "shortDesc": "****************************************"
+          }
+        },
+        {
+          "targetAccountName": "PRUEBA28082015",
+          "paymentConcept": "0014103526",
+          "identification": "90267906",
+          "stampAdditional": "promerof@sentra.cl",
+          "originCustomerName": "MOVISTAR",
+          "subproductTarget": {
+            "shortDesc": "****************************************"
+          }
+        },
+        {
+          "targetAccountName": "PRUEBA324082015",
+          "paymentConcept": "0014103526",
+          "identification": "92242526",
+          "stampAdditional": "promerof@sentra.cl",
+          "originCustomerName": "MOVISTAR",
+          "subproductTarget": {
+            "shortDesc": "****************************************"
+          }
+        },
+        {
+          "targetAccountName": "prueba_30092016",
+          "paymentConcept": "2354106996",
+          "identification": "009658962k",
+          "stampAdditional": "ftobar@bancoestado.cl",
+          "originCustomerName": "PARQUE RENACA",
+          "subproductTarget": {
+            "shortDesc": "CEMENTERIOS"
+          },
+          "originCustomer": "0000000104"
+        },
+        {
+          "targetAccountName": "ppp",
+          "paymentConcept": "2354106996",
+          "identification": "0109626708",
+          "stampAdditional": "jaraya7@externos.bancoestado.cl",
+          "originCustomerName": "PARQUE RENACA",
+          "subproductTarget": {
+            "shortDesc": "CEMENTERIOS"
+          },
+          "originCustomer": "0000000104"
+        },
+        {
+          "targetAccountName": "prueba05102016",
+          "paymentConcept": "2354106996",
+          "identification": "013297666K",
+          "originCustomerName": "PARQUE RENACA",
+          "subproductTarget": {
+            "shortDesc": "CEMENTERIOS"
+          },
+          "originCustomer": "0000000104"
+        },
+        {
+          "targetAccountName": "errornea",
+          "paymentConcept": "2354106996",
+          "identification": "12345677",
+          "stampAdditional": "mcuellar@bancoestado.cl",
+          "originCustomerName": "PARQUE RENACA",
+          "subproductTarget": {
+            "shortDesc": "CEMENTERIOS"
+          },
+          "originCustomer": "0000000104"
+        },
+        {
+          "targetAccountName": "cuenta05102016",
+          "paymentConcept": "2354106996",
+          "identification": "56723447",
+          "stampAdditional": "ftobar@bancoestado.cl",
+          "originCustomerName": "PARQUE RENACA",
+          "subproductTarget": {
+            "shortDesc": "CEMENTERIOS"
+          },
+          "originCustomer": "0000000104"
+        },
+        {
+          "targetAccountName": "prueba05102016",
+          "paymentConcept": "2354106996",
+          "identification": "65379597",
+          "originCustomerName": "PARQUE RENACA",
+          "subproductTarget": {
+            "shortDesc": "CEMENTERIOS"
+          },
+          "originCustomer": "0000000104"
+        },
+        {
+          "targetAccountName": "prueba05102016",
+          "paymentConcept": "2354106996",
+          "identification": "78362863",
+          "originCustomerName": "PARQUE RENACA",
+          "subproductTarget": {
+            "shortDesc": "CEMENTERIOS"
+          },
+          "originCustomer": "0000000104"
+        },
+        {
+          "targetAccountName": "prueba_30092016",
+          "paymentConcept": "2354106996",
+          "identification": "79283401",
+          "stampAdditional": "ftobar@bancoestado.cl",
+          "originCustomerName": "PARQUE RENACA",
+          "subproductTarget": {
+            "shortDesc": "CEMENTERIOS"
+          },
+          "originCustomer": "0000000104"
+        }
+      ]
     }
-  ]
+  }
 }
