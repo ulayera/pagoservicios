@@ -73,3 +73,7 @@ modules/.settings
 .bazelrc
 .vscode
 modules/.vscode
+
+
+#para evitar conflicto con dockerfile del pipeline 
+Dockerfile
