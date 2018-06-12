@@ -1,5 +1,5 @@
 const {strongSoapB9} = require('soap-client-bech');
-const {exito, malRequest,} = require('arquitecturadigital-bech').mensajeSalida;
+const {exito, malRequest} = require('arquitecturadigital-bech').mensajeSalida;
 const {monitoreoBECH} = require('arquitecturadigital-bech');
 
 /**
@@ -32,14 +32,10 @@ module.exports.QryCustomerOperRelationsProduct = {
         return new Promise(async (resolve, reject) => {
             await strongSoapB9(url, currHeader, req, funcionWSDL)
                 .then((resp) => {
-                    respuesta = exito('Exito en la prueba', resp.result).obtieneMensaje();
-                    try {monitoreoBECH(req, respuesta);} catch(e) {}
-                    resolve(respuesta);
+                    resolve(resp);
                 })
                 .catch((error) => {
-                    respuesta = malRequest('Fallo en la prueba', error.root.Envelope.Body.Fault).obtieneMensaje();
-                    try {monitoreoBECH(req, respuesta);} catch(e) {}
-                    reject(respuesta);
+                    reject(error.root.Envelope.Body.Fault);
                 })
         });
     },

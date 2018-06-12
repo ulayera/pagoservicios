@@ -1,0 +1,47 @@
+{
+  "requestJSON": {
+    "header": {
+      "Trx": {
+        "ServiceId": "massiveSelectEftAccessionByCustomer",
+        "Type": "Response",
+        "InstitutionType": "BECH",
+        "FeatureId": "Prueba_Servicio",
+        "ChannelId": "HB",
+        "BranchId": "443",
+        "TimeStamp": "20180612213121753",
+        "ErrorCode": "0",
+        "Token": "6qy2vqvl7blecofy.1528842015752",
+        "TerminalId": "4546",
+        "Client": {
+          "UserAgent": "browser=IE6.0;platform=WINXP;subChannel=3154;",
+          "Address": "167.28.140.55",
+          "SessionId": "65454654",
+          "UserId": "0036050314",
+          "OperatorId": "123744160"
+        },
+        "internals": {
+          "translate": "false",
+          "serviceProviderName": "CICS",
+          "serviceProviderEntityName": "BECH",
+          "serviceResponseTimestamp": "20180612172015780"
+        }
+      }
+    },
+    "body": {
+      "customerIdentification": {
+        "identificationNumber": "9026790",
+        "identificationComplement": "6"
+      },
+      "customerIdentificationUser": {
+        "identificationNumber": "9026790",
+        "identificationComplement": "6"
+      }
+    }
+  },
+  "result": {
+    "eftsAccessions": {
+      "eftAccessions": [
+      ]
+    }
+  }
+}
