@@ -1,1 +1,0 @@
-require('../../repository/getCuentasInscritas/getCuentasInscritas.spec');

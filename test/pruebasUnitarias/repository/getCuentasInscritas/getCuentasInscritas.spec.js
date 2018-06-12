@@ -23,7 +23,7 @@ describe('TEST getCuentasInscritas', function () {
     }
 
     it('Deberia retornar exito, estado 200', (done) => {
-        let controller = generateMock(require('../clients/QryCustomerOperRelationsProductResponse'), true);
+        let controller = generateMock(require('../../../../repository/clients/QryCustomerOperRelationsProductResponse'), true);
         let res = new response();
         let req = {
             params: {
@@ -49,7 +49,7 @@ describe('TEST getCuentasInscritas', function () {
     });
 
     it('Deberia retornar exito lista vacia, estado 200', (done) => {
-        let controller = generateMock(require('../clients/QryCustomerOperRelationsProductResponseEmpty'), true);
+        let controller = generateMock(require('../../../../repository/clients/QryCustomerOperRelationsProductResponseEmpty'), true);
         let res = new response();
         let req = {
             params: {
@@ -83,7 +83,7 @@ describe('TEST getCuentasInscritas', function () {
     });
 
     it('Deberia retornar Fallo, Rut Invalido, estado 400', (done) => {
-        let controller = generateMock(require('../clients/QryCustomerOperRelationsProductResponseEmpty'), true);
+        let controller = generateMock(require('../../../../repository/clients/QryCustomerOperRelationsProductResponseEmpty'), true);
         let res = new response();
         let req = {
             headers: {},
@@ -99,7 +99,7 @@ describe('TEST getCuentasInscritas', function () {
     });
 
     it('Deberia retornar Fallo, in param rut, estado 400', (done) => {
-        let controller = generateMock(require('../clients/QryCustomerOperRelationsProductResponseEmpty'), true);
+        let controller = generateMock(require('../../../../repository/clients/QryCustomerOperRelationsProductResponseEmpty'), true);
         let res = new response();
         let req = {
             headers: {},
