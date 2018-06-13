@@ -9,9 +9,9 @@ chai.use(chaiHttp);
 chai.use(expectToBeAPromise);
 const expect = chai.expect;
 
-const QryCustomerOperRelationsProductResponse = require('../../../../repository/clients/QryCustomerOperRelationsProductResponse');
+const QryCustomerOperRelationsProductResponse = require('../clients/QryCustomerOperRelationsProductResponse');
 
-const generateMock = (obj, isOk) => rewiremock.proxy('./getCuentasInscritas.controller', () => ({
+const generateMock = (obj, isOk) => rewiremock.proxy('./getCuentasInscritas.controller', r => ({
   'arquitecturadigital-bech': {
     mensajeSalida: {
       exito,
