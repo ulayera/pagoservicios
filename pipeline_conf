@@ -1,0 +1,4 @@
+version:v2
+deploy_td:true
+deploy_pd:false
+template_based:true
