@@ -1,4 +1,4 @@
-  {
-    "serverId" : "externalServer", 
-    "projectKey" : "microservicios-pagoservicios"
-  }  
+{
+  "serverId": "externalServer",
+  "projectKey": "microservicios-pagoservicios"
+}
