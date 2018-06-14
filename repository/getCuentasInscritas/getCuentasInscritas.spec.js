@@ -1,6 +1,6 @@
 const chai = require('chai');
 const expectToBeAPromise = require('expect-to-be-a-promise');
-const {exito, malRequest} = require('arquitecturadigital-bech').mensajeSalida;
+const { exito, malRequest } = require('arquitecturadigital-bech').mensajeSalida;
 const MockExpressResponse = require('mock-express-response');
 const chaiHttp = require('chai-http');
 const rewiremock = require('rewiremock').default;
@@ -86,7 +86,7 @@ describe('TEST getCuentasInscritas', function () {
   });
 
   it('Deberia retornar fallo, Strong SOAP retorna error, estado 400', (done) => {
-    const controller = generateMock({codigo: 400, mensaje: 'Error', payload: ''}, false);
+    const controller = generateMock({ codigo: 400, mensaje: 'Error', payload: '' }, false);
     const res = new MockExpressResponse();
     const req = {
       headers: {},

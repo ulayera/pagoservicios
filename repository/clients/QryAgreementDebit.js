@@ -3,7 +3,7 @@ const { strongSoapB9 } = require('soap-client-bech');
 /**
  * Variables locales estaticas
  */
-const url = 'http://167.28.65.55:6106/services/QryCustomerOperRelationsProduct/v1.0?wsdl';
+const url = 'http://167.28.65.55:6106/services/QryAgreementDebit/v1.0?wsdl';
 const header = {
   Type: 'Request',
   InstitutionType: 'BECH',
@@ -21,12 +21,12 @@ const header = {
 };
 
 
-module.exports.QryCustomerOperRelationsProduct = {
-  massiveSelectEftAccessionByCustomer: async (req) => {
+module.exports.QryAgreementDebit = {
+  singleSelectEftDebitsByIdentification: async (req) => {
     const currHeader = Object.assign(header);
-    currHeader.ServiceId = 'massiveSelectEftAccessionByCustomer';
+    currHeader.ServiceId = 'singleSelectEftDebitsByIdentification';
     currHeader.TimeStamp = (new Date()).toISOString().replace(/-|:|T|Z|\./g, '');
-    const funcionWSDL = ['QryCustomerOperRelationsProduct', 'QryCustomerOperRelationsProduct', currHeader.ServiceId];
+    const funcionWSDL = ['QryAgreementDebit', 'QryAgreementDebit', currHeader.ServiceId];
     return new Promise(async (resolve, reject) => {
       await strongSoapB9(url, currHeader, req, funcionWSDL)
         .then((resp) => {
