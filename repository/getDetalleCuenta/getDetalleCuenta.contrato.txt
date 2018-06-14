@@ -1,0 +1,3 @@
+curl -X GET http://host:port/servicios/v1/cuentas-inscritas/90267906
+
+//TODO: export del pacto
