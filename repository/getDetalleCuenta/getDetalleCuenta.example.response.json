@@ -1,0 +1,18 @@
+{
+  "codigo": 200,
+  "mensaje": "Exito",
+  "payload": {
+    "deudas": {
+      "monto": 4290292,
+      "numeroDocumento": "V017757"
+    },
+    "deudaVencida": {
+      "fechaVencimiento": "20001208000000000",
+      "monto": 44129
+    },
+    "deudaActual": {
+      "fechaVencimiento": "20001208000000000",
+      "monto": 4246163
+    }
+  }
+}
