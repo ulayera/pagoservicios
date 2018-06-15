@@ -1,7 +1,9 @@
 {
   "name": "pagoservicios",
-  "version": "0.1.0",
-  "artefacto": "servicio",
+  "domain": "",
+  "subdomain": "",
+  "version": "1.0.0",
+  "artifactType": "microservicio",
   "description": "Microservicio del dominio de pago de servicios en la cual se exponen operaciones de acceos a BUS de pago de servicios (massive)",
   "main": "index.js",
   "scripts": {
@@ -25,14 +27,22 @@
   "nyc": {
     "exclude": [
       "**/*.spec.js",
-      "**/*.contrato.js",
-      "api",
-      "config",
-      "repository/healthcheck/",
-      "repository/notFound/",
-      "index.js",
-      "coverage",
-      "util"
+
+"**/*.contrato.js",
+
+"api",
+
+"config",
+
+"repository/healthcheck/",
+
+"repository/notFound/",
+
+"index.js",
+
+"coverage",
+
+"util"
     ]
   },
   "license": "ISC",
