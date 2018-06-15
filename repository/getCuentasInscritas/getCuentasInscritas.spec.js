@@ -62,7 +62,6 @@ describe('TEST getCuentasInscritas', function () {
         expect(body.payload[0]).to.have.a.property('conceptoPago');
         expect(body.payload[0]).to.have.a.property('selloAdicional');
         expect(body.payload[0]).to.have.a.property('objetivoSubproducto');
-        expect(body.payload[0]).to.have.a.property('identifiacion');
       });
     }());
   });

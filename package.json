@@ -1,6 +1,6 @@
 {
   "name": "pagoservicios",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "artefacto": "servicio",
   "description": "Microservicio del dominio de pago de servicios en la cual se exponen operaciones de acceos a BUS de pago de servicios (massive)",
   "main": "index.js",
@@ -40,6 +40,7 @@
     "arquitecturadigital-bech": "^1.3.1",
     "child-process-promise": "^2.2.1",
     "fs-extra": "^5.0.0",
+    "istanbul": "^0.4.5",
     "journal-bech": "^1.0.5",
     "jsonschema": "^1.2.4",
     "jwt-simple": "^0.5.1",
