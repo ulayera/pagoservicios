@@ -1,4 +1,4 @@
 version:v2
-deploy_td:true
-deploy_pd:false
+deploy_td:false
+deploy_pd:true
 template_based:true
