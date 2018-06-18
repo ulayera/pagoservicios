@@ -1,5 +1,5 @@
 unit-test:
-	node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha  -- --ui bdd -R spec -t 2000 test/pruebasUnitarias/**/*.js
+	npm run unitTests
 
 contract:
 	./node_modules/mocha/bin/_mocha test/pruebasContrato/*
