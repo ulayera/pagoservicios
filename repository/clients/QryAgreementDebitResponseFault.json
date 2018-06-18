@@ -1,0 +1,96 @@
+{
+  "root": {
+    "Envelope": {
+      "Header": {
+        "Trx": {
+          "ServiceId": "singleSelectEftDebitsByIdentification",
+          "Type": "Response",
+          "InstitutionType": "BECH",
+          "FeatureId": "Prueba_Servicio",
+          "ChannelId": "HB",
+          "BranchId": "443",
+          "TimeStamp": "20180618154605695",
+          "ErrorCode": "70",
+          "ReasonCode": "CLIENTE NO EXISTE",
+          "Token": "6r6b6sa130wecofy.1529339697065",
+          "TerminalId": "4546",
+          "Client": {
+            "UserAgent": "browser=IE6.0;platform=WINXP;subChannel=3154;",
+            "Address": "167.28.140.55",
+            "SessionId": "65454654",
+            "UserId": "0036050314",
+            "OperatorId": "123744160"
+          },
+          "internals": {
+            "translate": "true",
+            "serviceProviderName": "CICS",
+            "serviceProviderEntityName": "BECH",
+            "serviceResponseTimestamp": "20180618113457347"
+          }
+        }
+      },
+      "Body": {
+        "Fault": {
+          "faultcode": "soapenv:Server",
+          "faultstring": "CLIENTE NO EXISTE",
+          "faultactor": "singleSelectEftDebitsByIdentification",
+          "detail": {
+            "Error": {
+              "Code": "GENERIC_ERROR",
+              "Message": "En estos momentos no lo podemos atender, por favor intentelo mas tarde.",
+              "Type": "BUSINESS",
+              "Severity": "FATAL",
+              "Service": "singleSelectEftDebitsByIdentification",
+              "Source": "CICS",
+              "ErrorCode": "70",
+              "ErrorDetail": "CLIENTE NO EXISTE"
+            }
+          }
+        }
+      }
+    }
+  },
+  "response": {
+    "statusCode": 500,
+    "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:esb=\"http://soa.bestado.cl/services/Header/v1.3\">\n<soapenv:Header>\n<esb:Trx>\n<ServiceId>singleSelectEftDebitsByIdentification</ServiceId>\n<Type>Response</Type>\n<InstitutionType>BECH</InstitutionType>\n<FeatureId>Prueba_Servicio</FeatureId>\n<ChannelId>HB</ChannelId>\n<BranchId>443</BranchId>\n<TimeStamp>20180618154605695</TimeStamp>\n<ErrorCode>70</ErrorCode>\n<ReasonCode>CLIENTE NO EXISTE</ReasonCode>\n<Audit/>\n<Locale/>\n<TraceLevel/>\n<Token>6r6b6sa130wecofy.1529339697065</Token>\n<TerminalId>4546</TerminalId>\n<ExceptionTopic/>\n<Client>\n<UserAgent>browser=IE6.0;platform=WINXP;subChannel=3154;</UserAgent>\n<Address>167.28.140.55</Address>\n<SessionId>65454654</SessionId>\n<UserId>0036050314</UserId>\n<OperatorId>123744160</OperatorId></Client>\n<internals>\n<translate>true</translate>\n<serviceProviderName>CICS</serviceProviderName>\n<serviceProviderEntityName>BECH</serviceProviderEntityName>\n<serviceResponseTimestamp>20180618113457347</serviceResponseTimestamp></internals></esb:Trx></soapenv:Header>\n<soapenv:Body>\n<soapenv:Fault>\n<faultcode>soapenv:Server</faultcode>\n<faultstring>CLIENTE NO EXISTE</faultstring>\n<faultactor>singleSelectEftDebitsByIdentification</faultactor>\n<detail>\n<Error>\n<Code>GENERIC_ERROR</Code>\n<Message>En estos momentos no lo podemos atender, por favor intentelo mas tarde.</Message>\n<Type>BUSINESS</Type>\n<Severity>FATAL</Severity>\n<Service>singleSelectEftDebitsByIdentification</Service>\n<Source>CICS</Source>\n<ErrorCode>70</ErrorCode>\n<ErrorDetail>CLIENTE NO EXISTE</ErrorDetail></Error></detail></soapenv:Fault></soapenv:Body></soapenv:Envelope>",
+    "headers": {
+      "x-backside-transport": "OK OK",
+      "connection": "close",
+      "transfer-encoding": "chunked",
+      "mqmd": "<MQMD><StrucId>MD  </StrucId><Version>1</Version><Report>0</Report><MsgType>8</MsgType><Expiry>-1</Expiry><Feedback>0</Feedback><Encoding>546</Encoding><CodedCharSetId>1208</CodedCharSetId><Format>MQSTR   </Format><Priority>0</Priority><Persistence>0</Persistence><MsgId>414d512051314c47572020202020202068e8235b703b0420</MsgId><CorrelId>414d512051314c47572020202020202068e8235b703b0420</CorrelId><BackoutCount>0</BackoutCount><ReplyToQ>SERVICE.RESPONSE                                </ReplyToQ><ReplyToQMgr>Q1LGW                                           </ReplyToQMgr><UserIdentifier>mqm         </UserIdentifier><AccountingToken>0000000000000000000000000000000000000000000000000000000000000000</AccountingToken><ApplIdentityData>                                </ApplIdentityData><PutApplType>6</PutApplType><PutApplName>WebSphere Datapower MQClient</PutApplName><PutDate>20180618</PutDate><PutTime>15475517</PutTime><ApplOriginData>    </ApplOriginData></MQMD>",
+      "x-client-ip": "172.17.235.140",
+      "x-global-transaction-id": "8424454",
+      "content-language": "es-ES",
+      "content-type": "text/xml"
+    },
+    "request": {
+      "uri": {
+        "protocol": "http:",
+        "slashes": true,
+        "auth": null,
+        "host": "167.28.65.55:6106",
+        "port": "6106",
+        "hostname": "167.28.65.55",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/services/QryAgreementDebit/v1.0",
+        "path": "/services/QryAgreementDebit/v1.0",
+        "href": "http://167.28.65.55:6106/services/QryAgreementDebit/v1.0"
+      },
+      "method": "POST",
+      "headers": {
+        "User-Agent": "strong-soap/1.9.0",
+        "Accept": "text/html,application/xhtml+xml,application/xml,text/xml;q=0.9,*/*;q=0.8",
+        "Accept-Encoding": "none",
+        "Accept-Charset": "utf-8",
+        "Connection": "close",
+        "Host": "167.28.65.55:6106",
+        "Content-Length": 1199,
+        "Content-Type": "text/xml; charset=utf-8",
+        "SOAPAction": "\"http://soa.bestado.cl/services/QryAgreementDebit/v1.0/singleSelectEftDebitsByIdentification\""
+      }
+    }
+  },
+  "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:esb=\"http://soa.bestado.cl/services/Header/v1.3\">\n<soapenv:Header>\n<esb:Trx>\n<ServiceId>singleSelectEftDebitsByIdentification</ServiceId>\n<Type>Response</Type>\n<InstitutionType>BECH</InstitutionType>\n<FeatureId>Prueba_Servicio</FeatureId>\n<ChannelId>HB</ChannelId>\n<BranchId>443</BranchId>\n<TimeStamp>20180618154605695</TimeStamp>\n<ErrorCode>70</ErrorCode>\n<ReasonCode>CLIENTE NO EXISTE</ReasonCode>\n<Audit/>\n<Locale/>\n<TraceLevel/>\n<Token>6r6b6sa130wecofy.1529339697065</Token>\n<TerminalId>4546</TerminalId>\n<ExceptionTopic/>\n<Client>\n<UserAgent>browser=IE6.0;platform=WINXP;subChannel=3154;</UserAgent>\n<Address>167.28.140.55</Address>\n<SessionId>65454654</SessionId>\n<UserId>0036050314</UserId>\n<OperatorId>123744160</OperatorId></Client>\n<internals>\n<translate>true</translate>\n<serviceProviderName>CICS</serviceProviderName>\n<serviceProviderEntityName>BECH</serviceProviderEntityName>\n<serviceResponseTimestamp>20180618113457347</serviceResponseTimestamp></internals></esb:Trx></soapenv:Header>\n<soapenv:Body>\n<soapenv:Fault>\n<faultcode>soapenv:Server</faultcode>\n<faultstring>CLIENTE NO EXISTE</faultstring>\n<faultactor>singleSelectEftDebitsByIdentification</faultactor>\n<detail>\n<Error>\n<Code>GENERIC_ERROR</Code>\n<Message>En estos momentos no lo podemos atender, por favor intentelo mas tarde.</Message>\n<Type>BUSINESS</Type>\n<Severity>FATAL</Severity>\n<Service>singleSelectEftDebitsByIdentification</Service>\n<Source>CICS</Source>\n<ErrorCode>70</ErrorCode>\n<ErrorDetail>CLIENTE NO EXISTE</ErrorDetail></Error></detail></soapenv:Fault></soapenv:Body></soapenv:Envelope>"
+}

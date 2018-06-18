@@ -1,0 +1,90 @@
+{
+  "root": {
+    "Envelope": {
+      "Header": {
+        "Trx": {
+          "ServiceId": "massiveSelectEftAccessionByCustomer",
+          "Type": "Response",
+          "InstitutionType": "BECH",
+          "FeatureId": "Prueba_Servicio",
+          "ChannelId": "HB",
+          "BranchId": "443",
+          "TimeStamp": "20180618160557302",
+          "ErrorCode": "03",
+          "ReasonCode": "SIN INFORMACION ASOCIADA",
+          "Token": "6r6bwby03f6ecofy.1529340888960",
+          "TerminalId": "4546",
+          "Client": {
+            "UserAgent": "browser=IE6.0;platform=WINXP;subChannel=3154;",
+            "Address": "167.28.140.55",
+            "SessionId": "65454654",
+            "UserId": "0036050314",
+            "OperatorId": "123744160"
+          },
+          "internals": {
+            "translate": "false",
+            "serviceProviderName": "CICS",
+            "serviceProviderEntityName": "BECH",
+            "serviceResponseTimestamp": "20180618115448992"
+          }
+        }
+      },
+      "Body": {
+        "Fault": {
+          "faultcode": "soapenv:Server",
+          "faultstring": "SIN INFORMACION ASOCIADA",
+          "faultactor": "massiveSelectEftAccessionByCustomerCano",
+          "detail": {
+            "Error": {
+              "ErrorCode": "03",
+              "ErrorDetail": "SIN INFORMACION ASOCIADA"
+            }
+          }
+        }
+      }
+    }
+  },
+  "response": {
+    "statusCode": 500,
+    "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<NS1:Envelope xmlns:NS1=\"http://schemas.xmlsoap.org/soap/envelope/\">\n<NS1:Header>\n<NS2:Trx xmlns:NS2=\"http://soa.bestado.cl/services/Header/v1.3\">\n<ServiceId>massiveSelectEftAccessionByCustomer</ServiceId>\n<Type>Response</Type>\n<InstitutionType>BECH</InstitutionType>\n<FeatureId>Prueba_Servicio</FeatureId>\n<ChannelId>HB</ChannelId>\n<BranchId>443</BranchId>\n<TimeStamp>20180618160557302</TimeStamp>\n<ErrorCode>03</ErrorCode>\n<ReasonCode>SIN INFORMACION ASOCIADA</ReasonCode>\n<Audit/>\n<Locale/>\n<TraceLevel/>\n<Token>6r6bwby03f6ecofy.1529340888960</Token>\n<TerminalId>4546</TerminalId>\n<ExceptionTopic/>\n<Client>\n<UserAgent>browser=IE6.0;platform=WINXP;subChannel=3154;</UserAgent>\n<Address>167.28.140.55</Address>\n<SessionId>65454654</SessionId>\n<UserId>0036050314</UserId>\n<OperatorId>123744160</OperatorId></Client>\n<internals>\n<translate>false</translate>\n<serviceProviderName>CICS</serviceProviderName>\n<serviceProviderEntityName>BECH</serviceProviderEntityName>\n<serviceResponseTimestamp>20180618115448992</serviceResponseTimestamp></internals></NS2:Trx></NS1:Header>\n<NS1:Body>\n<NS1:Fault>\n<faultcode>soapenv:Server</faultcode>\n<faultstring>SIN INFORMACION ASOCIADA</faultstring>\n<faultactor>massiveSelectEftAccessionByCustomerCano</faultactor>\n<detail>\n<Error>\n<ErrorCode>03</ErrorCode>\n<ErrorDetail>SIN INFORMACION ASOCIADA</ErrorDetail></Error></detail></NS1:Fault></NS1:Body></NS1:Envelope>",
+    "headers": {
+      "x-backside-transport": "OK OK",
+      "connection": "close",
+      "transfer-encoding": "chunked",
+      "mqmd": "<MQMD><StrucId>MD  </StrucId><Version>1</Version><Report>0</Report><MsgType>8</MsgType><Expiry>-1</Expiry><Feedback>0</Feedback><Encoding>546</Encoding><CodedCharSetId>1208</CodedCharSetId><Format>MQSTR   </Format><Priority>0</Priority><Persistence>0</Persistence><MsgId>414d512051314c47572020202020202068e8235b944b0420</MsgId><CorrelId>414d512051314c47572020202020202068e8235b944b0420</CorrelId><BackoutCount>0</BackoutCount><ReplyToQ>SERVICE.RESPONSE                                </ReplyToQ><ReplyToQMgr>Q1LGW                                           </ReplyToQMgr><UserIdentifier>mqm         </UserIdentifier><AccountingToken>0000000000000000000000000000000000000000000000000000000000000000</AccountingToken><ApplIdentityData>                                </ApplIdentityData><PutApplType>6</PutApplType><PutApplName>WebSphere Datapower MQClient</PutApplName><PutDate>20180618</PutDate><PutTime>16074684</PutTime><ApplOriginData>    </ApplOriginData></MQMD>",
+      "x-client-ip": "172.17.235.140",
+      "x-global-transaction-id": "8457398",
+      "content-language": "es-ES",
+      "content-type": "text/xml"
+    },
+    "request": {
+      "uri": {
+        "protocol": "http:",
+        "slashes": true,
+        "auth": null,
+        "host": "167.28.65.55:6106",
+        "port": "6106",
+        "hostname": "167.28.65.55",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/services/QryCustomerOperRelationsProduct/v1.0",
+        "path": "/services/QryCustomerOperRelationsProduct/v1.0",
+        "href": "http://167.28.65.55:6106/services/QryCustomerOperRelationsProduct/v1.0"
+      },
+      "method": "POST",
+      "headers": {
+        "User-Agent": "strong-soap/1.9.0",
+        "Accept": "text/html,application/xhtml+xml,application/xml,text/xml;q=0.9,*/*;q=0.8",
+        "Accept-Encoding": "none",
+        "Accept-Charset": "utf-8",
+        "Connection": "close",
+        "Host": "167.28.65.55:6106",
+        "Content-Length": 1429,
+        "Content-Type": "text/xml; charset=utf-8",
+        "SOAPAction": "\"http://soa.bestado.cl/services/QryCustomerOperRelationsProduct/v1.0/massiveSelectEftAccessionByCustomer\""
+      }
+    }
+  },
+  "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<NS1:Envelope xmlns:NS1=\"http://schemas.xmlsoap.org/soap/envelope/\">\n<NS1:Header>\n<NS2:Trx xmlns:NS2=\"http://soa.bestado.cl/services/Header/v1.3\">\n<ServiceId>massiveSelectEftAccessionByCustomer</ServiceId>\n<Type>Response</Type>\n<InstitutionType>BECH</InstitutionType>\n<FeatureId>Prueba_Servicio</FeatureId>\n<ChannelId>HB</ChannelId>\n<BranchId>443</BranchId>\n<TimeStamp>20180618160557302</TimeStamp>\n<ErrorCode>03</ErrorCode>\n<ReasonCode>SIN INFORMACION ASOCIADA</ReasonCode>\n<Audit/>\n<Locale/>\n<TraceLevel/>\n<Token>6r6bwby03f6ecofy.1529340888960</Token>\n<TerminalId>4546</TerminalId>\n<ExceptionTopic/>\n<Client>\n<UserAgent>browser=IE6.0;platform=WINXP;subChannel=3154;</UserAgent>\n<Address>167.28.140.55</Address>\n<SessionId>65454654</SessionId>\n<UserId>0036050314</UserId>\n<OperatorId>123744160</OperatorId></Client>\n<internals>\n<translate>false</translate>\n<serviceProviderName>CICS</serviceProviderName>\n<serviceProviderEntityName>BECH</serviceProviderEntityName>\n<serviceResponseTimestamp>20180618115448992</serviceResponseTimestamp></internals></NS2:Trx></NS1:Header>\n<NS1:Body>\n<NS1:Fault>\n<faultcode>soapenv:Server</faultcode>\n<faultstring>SIN INFORMACION ASOCIADA</faultstring>\n<faultactor>massiveSelectEftAccessionByCustomerCano</faultactor>\n<detail>\n<Error>\n<ErrorCode>03</ErrorCode>\n<ErrorDetail>SIN INFORMACION ASOCIADA</ErrorDetail></Error></detail></NS1:Fault></NS1:Body></NS1:Envelope>"
+}
