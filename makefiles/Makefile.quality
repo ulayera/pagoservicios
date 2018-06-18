@@ -1,5 +1,5 @@
 unit-test:
-	npm run unitTests
+	npm run unitTesting
 
 contract:
 	./node_modules/mocha/bin/_mocha test/pruebasContrato/*
