@@ -9,10 +9,10 @@ chai.use(chaiHttp);
 chai.use(expectToBeAPromise);
 const expect = chai.expect;
 
-const QryCustomerOperRelationsProductResponse = require('../../../../repository/clients/QryCustomerOperRelationsProductResponse');
+const QryCustomerOperRelationsProductResponse = require('../../../repository/clients/QryCustomerOperRelationsProductResponse');
 
 const generateMock = function (obj, isOk) {
-  return rewiremock.proxy('../../../../repository/getCuentasInscritas/getCuentasInscritas.controller', function (r) {
+  return rewiremock.proxy('../../../repository/getCuentasInscritas/getCuentasInscritas.controller', function (r) {
     return {
       'arquitecturadigital-bech': {
         mensajeSalida: {
