@@ -10,14 +10,20 @@ const expect = chai.expect;
 const QryCustomerOperRelationsProductResponse = require('../../../repository/clients/QryCustomerOperRelationsProductResponse');
 const QryCustomerOperRelationsProductResponseFault = require('../../../repository/clients/QryCustomerOperRelationsProductResponseFault');
 
-const generateMock = (obj, isOk) => rewiremock.proxy('../../../repository/clients/QryCustomerOperRelationsProduct', r => ({
-  'soap-client-bech': {
-    strongSoapB9: (url, currHeader, req, funcionWSDL) => new Promise((resolve, reject) => {
-      if (isOk) resolve(obj.result);
-      else reject(obj);
-    }),
-  },
-})).QryCustomerOperRelationsProduct;
+const generateMock = function (obj, isOk) {
+  return rewiremock.proxy('../../../repository/clients/QryCustomerOperRelationsProduct', function (r) {
+    return {
+      'soap-client-bech': {
+        strongSoapB9: function (url, currHeader, req, funcionWSDL) {
+          return new Promise(function (resolve, reject) {
+            if (isOk) resolve(obj.result);
+            else reject(obj);
+          });
+        },
+      },
+    };
+  }).QryCustomerOperRelationsProduct;
+};
 
 describe('TEST getCuentasInscritas', function () {
   this.timeout(3000);
@@ -31,11 +37,11 @@ describe('TEST getCuentasInscritas', function () {
     }
   }
 
-  it('Deberia retornar exito, estado 200', (done) => {
+  it('Deberia retornar exito, estado 200', function (done) {
     const service = generateMock(QryCustomerOperRelationsProductResponse, true);
     (async function () {
       const respuesta = await service.massiveSelectEftAccessionByCustomer();
-      check(done, () => {
+      check(done, function () {
         expect(respuesta.eftsAccessions.eftAccessions).to.be.an('array').that.is.not.empty;
         expect(respuesta.eftsAccessions.eftAccessions[0]).to.have.a.property('targetAccountName');
         expect(respuesta.eftsAccessions.eftAccessions[0]).to.have.a.property('paymentConcept');
@@ -49,13 +55,13 @@ describe('TEST getCuentasInscritas', function () {
     }());
   });
 
-  it('Deberia retornar fallo, Strong SOAP retorna error, estado 400', (done) => {
+  it('Deberia retornar fallo, Strong SOAP retorna error, estado 400', function (done) {
     const service = generateMock(QryCustomerOperRelationsProductResponseFault, false);
     (async function () {
       try {
         await service.massiveSelectEftAccessionByCustomer();
       } catch (e) {
-        check(done, () => {
+        check(done, function () {
           expect(e).to.have.a.property('faultstring');
         });
       }

@@ -11,24 +11,30 @@ const expect = chai.expect;
 
 const QryCustomerOperRelationsProductResponse = require('../../../../repository/clients/QryAgreementDebitResponse');
 
-const generateMock = (obj, isOk) => rewiremock.proxy('../../../../repository/getDetalleCuenta/getDetalleCuenta.controller', r => ({
-  'arquitecturadigital-bech': {
-    mensajeSalida: {
-      exito,
-      malRequest,
-    },
-    monitoreoBECH: () => {
-    },
-  },
-  '../clients/QryAgreementDebit': {
-    QryAgreementDebit: {
-      singleSelectEftDebitsByIdentification: () => new Promise(async (resolve, reject) => {
-        if (isOk) resolve(obj);
-        else reject(obj);
-      }),
-    },
-  },
-}));
+const generateMock = function (obj, isOk) {
+  return rewiremock.proxy('../../../../repository/getDetalleCuenta/getDetalleCuenta.controller', function (r) {
+    return {
+      'arquitecturadigital-bech': {
+        mensajeSalida: {
+          exito,
+          malRequest,
+        },
+        monitoreoBECH: function () {
+        },
+      },
+      '../clients/QryAgreementDebit': {
+        QryAgreementDebit: {
+          singleSelectEftDebitsByIdentification: function () {
+            return new Promise(async function (resolve, reject) {
+              if (isOk) resolve(obj);
+              else reject(obj);
+            });
+          },
+        },
+      },
+    };
+  });
+};
 
 describe('TEST getDetalleCuenta', function () {
   this.timeout(3000);
@@ -42,7 +48,7 @@ describe('TEST getDetalleCuenta', function () {
     }
   }
 
-  it('Deberia retornar exito, estado 200', (done) => {
+  it('Deberia retornar exito, estado 200', function (done) {
     const controller = generateMock(QryCustomerOperRelationsProductResponse, true);
     const res = new MockExpressResponse();
     const req = {
@@ -53,7 +59,7 @@ describe('TEST getDetalleCuenta', function () {
     };
     (async function () {
       await controller.getDetalleCuenta(req, res);
-      check(done, () => {
+      check(done, function () {
         expect(res).to.have.a.property('statusCode', 200);
         const body = res._getJSON();
         expect(body.payload).to.have.a.property('deudas');
@@ -63,23 +69,22 @@ describe('TEST getDetalleCuenta', function () {
     }());
   });
 
-  it('Sin parametros, Deberia retornar fallo, estado 400', (done) => {
+  it('Sin parametros, Deberia retornar fallo, estado 400', function (done) {
     const controller = generateMock(QryCustomerOperRelationsProductResponse, true);
     const res = new MockExpressResponse();
     const req = {
-      params: {
-      },
+      params: {},
     };
     (async function () {
       await controller.getDetalleCuenta(req, res);
-      check(done, () => {
+      check(done, function () {
         expect(res).to.have.a.property('statusCode', 400);
       });
     }());
   });
 
-  it('Deberia retornar fallo, Strong SOAP retorna error, estado 400', (done) => {
-    const controller = generateMock({ codigo: 400, mensaje: 'Error', payload: '' }, false);
+  it('Deberia retornar fallo, Strong SOAP retorna error, estado 400', function (done) {
+    const controller = generateMock({codigo: 400, mensaje: 'Error', payload: ''}, false);
     const res = new MockExpressResponse();
     const req = {
       headers: {},
@@ -90,7 +95,7 @@ describe('TEST getDetalleCuenta', function () {
     };
     (async function () {
       await controller.getDetalleCuenta(req, res);
-      check(done, () => {
+      check(done, function () {
         expect(res).to.have.a.property('statusCode', 400);
       });
     }());

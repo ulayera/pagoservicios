@@ -11,24 +11,30 @@ const expect = chai.expect;
 
 const QryCustomerOperRelationsProductResponse = require('../../../../repository/clients/QryCustomerOperRelationsProductResponse');
 
-const generateMock = (obj, isOk) => rewiremock.proxy('../../../../repository/getCuentasInscritas/getCuentasInscritas.controller', r => ({
-  'arquitecturadigital-bech': {
-    mensajeSalida: {
-      exito,
-      malRequest,
-    },
-    monitoreoBECH: () => {
-    },
-  },
-  '../clients/QryCustomerOperRelationsProduct': {
-    QryCustomerOperRelationsProduct: {
-      massiveSelectEftAccessionByCustomer: () => new Promise(async (resolve, reject) => {
-        if (isOk) resolve(obj);
-        else reject(obj);
-      }),
-    },
-  },
-}));
+const generateMock = function (obj, isOk) {
+  return rewiremock.proxy('../../../../repository/getCuentasInscritas/getCuentasInscritas.controller', function (r) {
+    return {
+      'arquitecturadigital-bech': {
+        mensajeSalida: {
+          exito,
+          malRequest,
+        },
+        monitoreoBECH: function () {
+        },
+      },
+      '../clients/QryCustomerOperRelationsProduct': {
+        QryCustomerOperRelationsProduct: {
+          massiveSelectEftAccessionByCustomer: function () {
+            return new Promise(async function (resolve, reject) {
+              if (isOk) resolve(obj);
+              else reject(obj);
+            });
+          },
+        },
+      },
+    };
+  });
+};
 
 describe('TEST getCuentasInscritas', function () {
   this.timeout(3000);
@@ -42,7 +48,7 @@ describe('TEST getCuentasInscritas', function () {
     }
   }
 
-  it('Deberia retornar exito, estado 200', (done) => {
+  it('Deberia retornar exito, estado 200', function (done) {
     const controller = generateMock(QryCustomerOperRelationsProductResponse, true);
     const res = new MockExpressResponse();
     const req = {
@@ -52,7 +58,7 @@ describe('TEST getCuentasInscritas', function () {
     };
     (async function () {
       await controller.getCuentasInscritas(req, res);
-      check(done, () => {
+      check(done, function () {
         expect(res).to.have.a.property('statusCode', 200);
         const body = res._getJSON();
         expect(body.payload).to.be.an('array').that.is.not.empty;
@@ -66,7 +72,7 @@ describe('TEST getCuentasInscritas', function () {
     }());
   });
 
-  it('Deberia retornar exito lista vacia, estado 200', (done) => {
+  it('Deberia retornar exito lista vacia, estado 200', function (done) {
     const controller = generateMock(QryCustomerOperRelationsProductResponse, true);
     const res = new MockExpressResponse();
     const req = {
@@ -76,7 +82,7 @@ describe('TEST getCuentasInscritas', function () {
     };
     (async function () {
       await controller.getCuentasInscritas(req, res);
-      check(done, () => {
+      check(done, function () {
         expect(res).to.have.a.property('statusCode', 200);
         const body = res._getJSON();
         expect(body.payload).to.be.an('array');
@@ -84,8 +90,8 @@ describe('TEST getCuentasInscritas', function () {
     }());
   });
 
-  it('Deberia retornar fallo, Strong SOAP retorna error, estado 400', (done) => {
-    const controller = generateMock({ codigo: 400, mensaje: 'Error', payload: '' }, false);
+  it('Deberia retornar fallo, Strong SOAP retorna error, estado 400', function (done) {
+    const controller = generateMock({codigo: 400, mensaje: 'Error', payload: ''}, false);
     const res = new MockExpressResponse();
     const req = {
       headers: {},
@@ -96,13 +102,13 @@ describe('TEST getCuentasInscritas', function () {
     };
     (async function () {
       await controller.getCuentasInscritas(req, res);
-      check(done, () => {
+      check(done, function () {
         expect(res).to.have.a.property('statusCode', 400);
       });
     }());
   });
 
-  it('Deberia retornar Fallo, Rut Invalido, estado 400', (done) => {
+  it('Deberia retornar Fallo, Rut Invalido, estado 400', function (done) {
     const controller = generateMock(QryCustomerOperRelationsProductResponse, true);
     const res = new MockExpressResponse();
     const req = {
@@ -114,13 +120,13 @@ describe('TEST getCuentasInscritas', function () {
     };
     (async function () {
       await controller.getCuentasInscritas(req, res);
-      check(done, () => {
+      check(done, function () {
         expect(res).to.have.a.property('statusCode', 400);
       });
     }());
   });
 
-  it('Deberia retornar Fallo, in param rut, estado 400', (done) => {
+  it('Deberia retornar Fallo, in param rut, estado 400', function (done) {
     const controller = generateMock(QryCustomerOperRelationsProductResponse, true);
     const res = new MockExpressResponse();
     const req = {
@@ -130,7 +136,7 @@ describe('TEST getCuentasInscritas', function () {
     };
     (async function () {
       await controller.getCuentasInscritas(req, res);
-      check(done, () => {
+      check(done, function () {
         expect(res).to.have.a.property('statusCode', 400);
       });
     }());
