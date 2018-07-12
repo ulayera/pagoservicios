@@ -1,0 +1,85 @@
+{
+  "root": {
+    "Envelope": {
+      "Header": {
+        "Trx": {
+          "ServiceId": "processEftServicePayments",
+          "Type": "Response",
+          "InstitutionType": "institutionType",
+          "FeatureId": "ROL@PS001",
+          "ChannelId": "MB",
+          "TerminalId": "UAS=Mozilla/5.0 (Linux; Android 6.0.1; XT1563 Build/MPDS24.107-52-11; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/60.0.3112.107 Mobile Safari/537.36",
+          "TimeStamp": "20170901120642",
+          "Client": {
+            "UserAgent": "UAS=Mozilla/5.0 (Linux; Android 6.0.1; XT1563 Build/MPDS24.107-52-11; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/60.0.3112.107 Mobile Safari/537.36",
+            "Address": "192.168.1.182",
+            "SessionId": "555888855tt",
+            "UserId": "75051328",
+            "OperatorId": "20170901120642.20170901120642"
+          },
+          "internals": {
+            "serviceResponseTimestamp": "20180712122115845"
+          }
+        }
+      },
+      "Body": {
+        "Fault": {
+          "faultcode": "Server",
+          "faultstring": "73 CLIENTE SIN DEUDA",
+          "faultactor": "processEftServicePayments",
+          "detail": {
+            "error": {
+              "cmmCode": "UNKNOWN_ERROR",
+              "cmmMsg": "Error Desconocido",
+              "kind": "GENERIC",
+              "severity": "FATAL",
+              "link": "insertEftDebitsSales",
+              "source": "CICS",
+              "sourceCode": "900",
+              "detail": "73 CLIENTE SIN DEUDA"
+            }
+          }
+        }
+      }
+    }
+  },
+  "response": {
+    "statusCode": 200,
+    "body": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n   <soapenv:Header>\n      <v1:Trx xmlns:v1=\"http://soa.bestado.cl/services/Header/v1.3\">\n         <ServiceId>processEftServicePayments</ServiceId>\n         <Type>Response</Type>\n         <InstitutionType>institutionType</InstitutionType>\n         <FeatureId>ROL@PS001</FeatureId>\n         <ChannelId>MB</ChannelId>\n         <TerminalId>UAS=Mozilla/5.0 (Linux; Android 6.0.1; XT1563 Build/MPDS24.107-52-11; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/60.0.3112.107 Mobile Safari/537.36</TerminalId>\n         <TimeStamp>20170901120642</TimeStamp>\n         <Client>\n            <UserAgent>UAS=Mozilla/5.0 (Linux; Android 6.0.1; XT1563 Build/MPDS24.107-52-11; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/60.0.3112.107 Mobile Safari/537.36</UserAgent>\n            <Address>192.168.1.182</Address>\n            <SessionId>555888855tt</SessionId>\n            <UserId>75051328</UserId>\n            <OperatorId>20170901120642.20170901120642</OperatorId>\n         </Client>\n         <internals>\n            <serviceResponseTimestamp>20180712122115845</serviceResponseTimestamp>\n         </internals>\n      </v1:Trx>\n   </soapenv:Header>\n   <soapenv:Body>\n      <Fault>\n         <faultcode>Server</faultcode>\n         <faultstring>73 CLIENTE SIN DEUDA</faultstring>\n         <faultactor>processEftServicePayments</faultactor>\n         <detail>\n            <error>\n               <cmmCode>UNKNOWN_ERROR</cmmCode>\n               <cmmMsg>Error Desconocido</cmmMsg>\n               <kind>GENERIC</kind>\n               <severity>FATAL</severity>\n               <link>insertEftDebitsSales</link>\n               <source>CICS</source>\n               <sourceCode>900</sourceCode>\n               <detail>73 CLIENTE SIN DEUDA</detail>\n            </error>\n         </detail>\n      </Fault>\n   </soapenv:Body>\n</soapenv:Envelope>",
+    "headers": {
+      "content-type": "text/xml; charset=utf-8",
+      "content-length": "1917",
+      "connection": "close",
+      "server": "Jetty(6.1.26)"
+    },
+    "request": {
+      "uri": {
+        "protocol": "http:",
+        "slashes": true,
+        "auth": null,
+        "host": "celulacobre:8080",
+        "port": "8080",
+        "hostname": "celulacobre",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/",
+        "path": "/",
+        "href": "http://celulacobre:8080/"
+      },
+      "method": "POST",
+      "headers": {
+        "User-Agent": "strong-soap/1.9.0",
+        "Accept": "text/html,application/xhtml+xml,application/xml,text/xml;q=0.9,*/*;q=0.8",
+        "Accept-Encoding": "none",
+        "Accept-Charset": "utf-8",
+        "Connection": "close",
+        "Host": "celulacobre:8080",
+        "Content-Length": 1631,
+        "Content-Type": "text/xml; charset=utf-8",
+        "SOAPAction": "\"http://soa.bestado.cl/services/OperEftServicePayment/v1.0/processEftServicePayments\""
+      }
+    }
+  },
+  "body": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n   <soapenv:Header>\n      <v1:Trx xmlns:v1=\"http://soa.bestado.cl/services/Header/v1.3\">\n         <ServiceId>processEftServicePayments</ServiceId>\n         <Type>Response</Type>\n         <InstitutionType>institutionType</InstitutionType>\n         <FeatureId>ROL@PS001</FeatureId>\n         <ChannelId>MB</ChannelId>\n         <TerminalId>UAS=Mozilla/5.0 (Linux; Android 6.0.1; XT1563 Build/MPDS24.107-52-11; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/60.0.3112.107 Mobile Safari/537.36</TerminalId>\n         <TimeStamp>20170901120642</TimeStamp>\n         <Client>\n            <UserAgent>UAS=Mozilla/5.0 (Linux; Android 6.0.1; XT1563 Build/MPDS24.107-52-11; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/60.0.3112.107 Mobile Safari/537.36</UserAgent>\n            <Address>192.168.1.182</Address>\n            <SessionId>555888855tt</SessionId>\n            <UserId>75051328</UserId>\n            <OperatorId>20170901120642.20170901120642</OperatorId>\n         </Client>\n         <internals>\n            <serviceResponseTimestamp>20180712122115845</serviceResponseTimestamp>\n         </internals>\n      </v1:Trx>\n   </soapenv:Header>\n   <soapenv:Body>\n      <Fault>\n         <faultcode>Server</faultcode>\n         <faultstring>73 CLIENTE SIN DEUDA</faultstring>\n         <faultactor>processEftServicePayments</faultactor>\n         <detail>\n            <error>\n               <cmmCode>UNKNOWN_ERROR</cmmCode>\n               <cmmMsg>Error Desconocido</cmmMsg>\n               <kind>GENERIC</kind>\n               <severity>FATAL</severity>\n               <link>insertEftDebitsSales</link>\n               <source>CICS</source>\n               <sourceCode>900</sourceCode>\n               <detail>73 CLIENTE SIN DEUDA</detail>\n            </error>\n         </detail>\n      </Fault>\n   </soapenv:Body>\n</soapenv:Envelope>"
+}

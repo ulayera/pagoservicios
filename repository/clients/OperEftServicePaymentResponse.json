@@ -1,0 +1,51 @@
+{
+  "requestJSON": {
+    "header": {
+      "Trx": {
+        "ServiceId": "processEftServicePayments",
+        "Type": "Response",
+        "InstitutionType": "institutionType",
+        "FeatureId": "ROL@PS001",
+        "ChannelId": "MB",
+        "TerminalId": "UAS=Mozilla/5.0 (Linux; Android 6.0.1; XT1563 Build/MPDS24.107-52-11; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/60.0.3112.107 Mobile Safari/537.36",
+        "TimeStamp": "20170901120642",
+        "Client": {
+          "UserAgent": "UAS=Mozilla/5.0 (Linux; Android 6.0.1; XT1563 Build/MPDS24.107-52-11; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/60.0.3112.107 Mobile Safari/537.36",
+          "Address": "192.168.1.182",
+          "SessionId": "555888855tt",
+          "UserId": "75051328",
+          "OperatorId": "20170901120642.20170901120642"
+        },
+        "internals": {
+          "serviceResponseTimestamp": "20180712122804665"
+        }
+      }
+    },
+    "body": {
+      "customerIdentification": {
+        "identificationNumber": "5952126",
+        "identificationComplement": "8"
+      },
+      "eftDebits": {
+        "originAccount": "23200005252",
+        "operationId": "uriSFB=CCT#CCT#23200005252",
+        "dueDate": "",
+        "amount": "44614",
+        "paymentConcept": "2354106996",
+        "documentNumber": "V035594",
+        "stampAdditional": "2354106996",
+        "identification": "83496533",
+        "sentDate": ""
+      }
+    }
+  },
+  "result": {
+    "customerIdentification": {
+      "identificationNumber": "5952126",
+      "identificationComplement": "8"
+    },
+    "eftDebits": {
+      "referenceNumber": 7023961
+    }
+  }
+}
