@@ -2,6 +2,7 @@ const { send } = require('micro');
 const { validaGetDetalleCuenta } = require('./getDetalleCuenta.scheme');
 const { exito, malRequest } = require('arquitecturadigital-bech').mensajeSalida;
 const { monitoreoBECH } = require('arquitecturadigital-bech');
+const { logger } = require('arquitecturaDigital');
 const { QryAgreementDebit } = require('../clients/QryAgreementDebit');
 
 /**
@@ -43,7 +44,9 @@ module.exports.getDetalleCuenta = async (req, res) => {
     respuesta = exito('Exito', respuesta);
     monitoreoBECH(req, respuesta);
     send(res, respuesta.codigo, respuesta);
+    logger.system.info('[MS pagoservicios] GET DETALLE CUENTAS - OK');
   } catch (error) {
+    logger.error.error('[MS pagoservicios] GET DETALLE CUENTAS - ERROR');
     respuesta = malRequest('Fallo en la prueba', error).obtieneMensaje();
     monitoreoBECH(req, respuesta);
     send(res, respuesta.codigo, respuesta);

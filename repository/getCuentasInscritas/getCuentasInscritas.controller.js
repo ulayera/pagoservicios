@@ -2,6 +2,7 @@ const { send } = require('micro');
 const { validaGetPersonaNatural } = require('./getCuentasInscritas.scheme');
 const { exito, malRequest } = require('arquitecturadigital-bech').mensajeSalida;
 const { monitoreoBECH } = require('arquitecturadigital-bech');
+const { logger } = require('arquitecturaDigital');
 const { QryCustomerOperRelationsProduct } = require('../clients/QryCustomerOperRelationsProduct');
 
 /**
@@ -42,7 +43,9 @@ module.exports.getCuentasInscritas = async (req, res) => {
     respuesta = exito('Exito', respuesta);
     monitoreoBECH(req, respuesta);
     send(res, respuesta.codigo, respuesta);
+    logger.system.info('[MS pagoservicios] GET CUENTAS INSCRITAS - OK');
   } catch (error) {
+    logger.error.error('[MS pagoservicios] GET CUENTAS INSCRITAS - ERROR');
     respuesta = malRequest('Fallo en la prueba', error).obtieneMensaje();
     monitoreoBECH(req, respuesta);
     send(res, respuesta.codigo, respuesta);
