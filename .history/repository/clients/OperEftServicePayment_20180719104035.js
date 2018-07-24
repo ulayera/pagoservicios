@@ -33,7 +33,6 @@ module.exports.OperEftServicePayment = {
           resolve(resp);
         })
         .catch((error) => {
-          console.log("ERRORR",error);
           reject(error.root.Envelope.Body.Fault);
         });
     });
