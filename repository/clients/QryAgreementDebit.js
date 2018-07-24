@@ -1,9 +1,10 @@
 const { strongSoapB9 } = require('soap-client-bech');
+const { ENV, SERVICES } = require('../../config/config');
 
 /**
  * Variables locales estaticas
  */
-const url = 'http://167.28.65.55:6106/services/QryAgreementDebit/v1.0?wsdl';
+const url = SERVICES[ENV].QryAgreementDebit.host + SERVICES[ENV].QryAgreementDebit.wsdl;
 const header = {
   Type: 'Request',
   InstitutionType: 'BECH',
