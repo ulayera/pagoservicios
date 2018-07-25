@@ -6,9 +6,10 @@ const { healthcheck } = require('../repository/healthcheck/healthcheck');
 const { notfound } = require('../repository/notFound/notFound');
 
 const api = router(
-  get('/microservicio/v1/pagoservicios/cuentasInscritas/:rut', getCuentasInscritas),
-  get('/microservicio/v1/pagoservicios/detalleCuenta/:identificacion/:conceptoPago', getDetalleCuenta),
-  post('/microservicio/v1/pagoservicios/realizarPagoCuenta', realizarPagoCuenta),
+  get('/microservicio/v1/pagoservicios/personasnaturales/healthcheck', healthcheck),
+  get('/microservicio/v1/pagoservicios/cuentas-inscritas/:rut', getCuentasInscritas),
+  get('/microservicio/v1/pagoservicios/detalle-cuenta/:identificacion/:conceptoPago', getDetalleCuenta),
+  post('/microservicio/v1/pagoservicios/realizar-pago-cuenta', realizarPagoCuenta),
   get('/*', notfound),
   post('/*', notfound),
 );

@@ -1,10 +1,9 @@
 const { strongSoapB9 } = require('soap-client-bech');
-const { ENV, SERVICES } = require('../../config/config');
+
 /**
  * Variables locales estaticas
  */
-// const url = 'http://172.28.115.24:8080/services/OperEftServicePayment/v1.0?wsdl';
-const url = SERVICES[ENV].OperEftServicePayment.host + SERVICES[ENV].OperEftServicePayment.wsdl;
+const url = 'http://localhost:8080/services/OperEftServicePayment/v1.0?wsdl';
 const header = {
   Type: 'Request',
   InstitutionType: 'BECH',
@@ -34,7 +33,6 @@ module.exports.OperEftServicePayment = {
           resolve(resp);
         })
         .catch((error) => {
-          console.log("ERRORR",error);
           reject(error.root.Envelope.Body.Fault);
         });
     });
