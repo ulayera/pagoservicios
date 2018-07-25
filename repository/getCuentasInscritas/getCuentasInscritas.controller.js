@@ -11,13 +11,14 @@ const { QryCustomerOperRelationsProduct } = require('../clients/QryCustomerOperR
  * @param res
  * @returns {Promise<void>}
  */
-module.exports.getCuentasInscritas = async (req, res) => {
+const getCuentasInscritas = async (req, res) => {
   let respuesta;
   try {
     await validaGetPersonaNatural(req);
     const { rut } = req.params;
     const rutSplitted = obtieneRut(rut);
     const request = {
+      heasders: {},
       customerIdentification: {
         identificationNumber: rutSplitted[0],
         identificationComplement: rutSplitted[1],
@@ -60,3 +61,5 @@ const obtieneRut = (personaNatural) => {
   const rutPersonaNatural = [rutSinDigito, digitoVerificador];
   return rutPersonaNatural;
 };
+
+module.exports = { getCuentasInscritas };

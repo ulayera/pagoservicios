@@ -52,10 +52,15 @@ module.exports.realizarPagoCuenta = async (req, res) => {
     send(res, respuesta.codigo, respuesta);
     logger.system.info('[MS pagoservicios] REALIZAR PAGO CUENTA - OK');
   } catch (error) {
-    logger.error.error('[MS pagoservicios] REALIZAR PAGO CUENTA - ERROR');
-    respuesta = malRequest('Fallo en la prueba', error).obtieneMensaje();
-    monitoreoBECH(req, respuesta);
-    send(res, respuesta.codigo, respuesta);
+    try {
+      logger.error.error('[MS pagoservicios] REALIZAR PAGO CUENTA - ERROR');
+      respuesta = malRequest('Fallo en la prueba', error).obtieneMensaje();
+      monitoreoBECH(req, respuesta);
+      send(res, respuesta.codigo, respuesta);
+    } catch (e) {
+      console.error(e);
+      send(res, 503, e);
+    }
   }
 };
 
