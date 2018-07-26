@@ -75,10 +75,6 @@ const generateMock = function (obj, isOk) {
   }));
 };
 
-after(() => {
-  global.asyncDump();
-});
-
 describe('TEST getCuentasInscritas', function () {
   this.timeout(20000);
 
@@ -101,13 +97,7 @@ describe('TEST getCuentasInscritas', function () {
       check(done, () => {
         expect(res).to.have.a.property('statusCode', 200);
         const body = res._getJSON();
-        // expect(body.payload).to.be.an('array').that.is.not.empty;
-        // expect(body.payload[0]).to.have.a.property('identificacion');
-        // expect(body.payload[0]).to.have.a.property('clienteOrigen');
-        // expect(body.payload[0]).to.have.a.property('nombreClienteOrigen');
-        // expect(body.payload[0]).to.have.a.property('conceptoPago');
-        // expect(body.payload[0]).to.have.a.property('selloAdicional');
-        // expect(body.payload[0]).to.have.a.property('objetivoSubproducto');
+        expect(body.paylload[0]).to.have.a.property('objetivoSubproducto');
       });
     }());
   });
