@@ -28,14 +28,12 @@ module.exports.QryCustomerOperRelationsProduct = {
     currHeader.ServiceId = 'massiveSelectEftAccessionByCustomer';
     currHeader.TimeStamp = (new Date()).toISOString().replace(/-|:|T|Z|\./g, '');
     const funcionWSDL = ['QryCustomerOperRelationsProduct', 'QryCustomerOperRelationsProduct', currHeader.ServiceId];
-    return new Promise(async (resolve, reject) => {
-      await strongSoapB9(url, currHeader, req, funcionWSDL)
-        .then((resp) => {
-          resolve(resp);
-        })
-        .catch((error) => {
-          reject(error.root.Envelope.Body.Fault);
-        });
-    });
+    strongSoapB9(url, currHeader, req, funcionWSDL)
+      .then((resp) => {
+        return resp;
+      })
+      .catch((error) => {
+        throw error.root.Envelope.Body.Fault;
+      });
   },
 };

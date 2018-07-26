@@ -5,8 +5,7 @@ const MockExpressResponse = require('mock-express-response');
 const MockExpressRequest = require('mock-express-request');
 const chaiHttp = require('chai-http');
 const rewiremock = require('rewiremock').default;
-const { Stream } = require('stream');
-const { readable } = require('is-stream');
+const { json } = require('micro');
 
 chai.use(chaiHttp);
 chai.use(expectToBeAPromise);
@@ -17,41 +16,11 @@ const QryCustomerOperRelationsProductResponse = require('../../../repository/cli
 const generateMock = function (obj, isOk) {
   return rewiremock.proxy('../../../repository/getCuentasInscritas/getCuentasInscritas.controller', r => ({
     micro: {
-      send: (res, code, obj = null) => {
-        res.statusCode = code;
-        if (obj === null) {
-          res.end();
-          return;
-        }
-        if (Buffer.isBuffer(obj)) {
-          if (!res.getHeader('Content-Type')) {
-            res.setHeader('Content-Type', 'application/octet-stream');
-          }
-
-          res.setHeader('Content-Length', obj.length);
-          res.end(obj);
-          return;
-        }
-        if (obj instanceof Stream || readable(obj)) {
-          if (!res.getHeader('Content-Type')) {
-            res.setHeader('Content-Type', 'application/octet-stream');
-          }
-
-          obj.pipe(res);
-          return;
-        }
-        let str = obj;
-        if (typeof obj === 'object' || typeof obj === 'number') {
-          str = JSON.stringify(obj, null, 2);
-          if (!res.getHeader('Content-Type')) {
-            res.setHeader('Content-Type', 'application/json; charset=utf-8');
-          }
-        }
-
-        res.setHeader('Content-Length', Buffer.byteLength(str));
-        res.end(str);
+      send: (res, statusCode, data) => {
+        res.status(statusCode).send(data);
       },
     },
+    arquitecturaDigital: { logger: { error: { error: () => {} }, system: { info: () => {} } } },
     'arquitecturadigital-bech': {
       mensajeSalida: {
         exito,
@@ -64,10 +33,7 @@ const generateMock = function (obj, isOk) {
       QryCustomerOperRelationsProduct: {
         massiveSelectEftAccessionByCustomer() {
           return new Promise((async (resolve, reject) => {
-            if (isOk)
-              resolve(obj);
-            else
-              reject(obj);
+            if (isOk) { resolve(obj); } else { reject(obj); }
           }));
         },
       },
@@ -93,78 +59,72 @@ describe('TEST getCuentasInscritas', function () {
     const req = new MockExpressRequest();
     req.params = { rut: '19' };
     (async function () {
-      await controller.getCuentasInscritas(req, res);
-      check(done, () => {
-        expect(res).to.have.a.property('statusCode', 200);
-        const body = res._getJSON();
-        expect(body.paylload[0]).to.have.a.property('objetivoSubproducto');
+      res.callback = (function () {
+        check(done, () => {
+          expect(res).to.have.a.property('statusCode', 200);
+          const body = res._getJSON();
+          expect(body.payload[0]).to.have.a.property('objetivoSubproducto');
+        });
       });
+      await controller.getCuentasInscritas(req, res);
+      res.callback();
     }());
   });
 
   it('Deberia retornar exito lista vacia, estado 200', (done) => {
     const controller = generateMock(QryCustomerOperRelationsProductResponse, true);
     const res = new MockExpressResponse();
-    const req = {
-      headers: {},
-      params: {
-        rut: '20901792K',
-      },
-    };
+    const req = new MockExpressRequest();
+    req.params = { rut: '20901792K' };
     (async function () {
-      await controller.getCuentasInscritas(req, res);
-      check(done, () => {
-        expect(res).to.have.a.property('statusCode', 200);
-        const body = res._getJSON();
-        expect(body.payload).to.be.an('array');
+      res.callback = (function cb() {
+        check(done, () => {
+          expect(res).to.have.a.property('statusCode', 200);
+          const body = res._getJSON();
+          expect(body.payload).to.be.an('array');
+        });
       });
+      await controller.getCuentasInscritas(req, res);
+      res.callback();
     }());
   });
 
   it('Deberia retornar fallo, Strong SOAP retorna error, estado 400', (done) => {
     const controller = generateMock({ codigo: 400, mensaje: 'Error', payload: '' }, false);
     const res = new MockExpressResponse();
-    const req = {
-      headers: {},
-      params: {
-        rut: '19',
-      },
-      body: {},
-    };
+    const req = new MockExpressRequest();
+    req.params = { rut: '19' };
     (async function () {
-      await controller.getCuentasInscritas(req, res);
-      check(done, () => {
-        expect(res).to.have.a.property('statusCode', 400);
+      res.callback = (function cb() {
+        check(done, () => {
+          expect(res).to.have.a.property('statusCode', 400);
+        });
       });
+      await controller.getCuentasInscritas(req, res);
+      res.callback();
     }());
   });
 
   it('Deberia retornar Fallo, Rut Invalido, estado 400', (done) => {
     const controller = generateMock(QryCustomerOperRelationsProductResponse, true);
     const res = new MockExpressResponse();
-    const req = {
-      headers: {},
-      params: {
-        rut: '18',
-      },
-      body: {},
-    };
+    const req = new MockExpressRequest();
+    req.params = { rut: '19' };
     (async function () {
-      await controller.getCuentasInscritas(req, res);
-      check(done, () => {
-        expect(res).to.have.a.property('statusCode', 400);
+      res.callback = (function cb() {
+        check(done, () => {
+          expect(res).to.have.a.property('statusCode', 400);
+        });
       });
+      await controller.getCuentasInscritas(req, res);
+      res.callback();
     }());
   });
 
   it('Deberia retornar Fallo, in param rut, estado 400', (done) => {
     const controller = generateMock(QryCustomerOperRelationsProductResponse, true);
     const res = new MockExpressResponse();
-    const req = {
-      headers: {},
-      params: {},
-      body: {},
-    };
+    const req = new MockExpressRequest();
     (async function () {
       await controller.getCuentasInscritas(req, res);
       check(done, () => {
